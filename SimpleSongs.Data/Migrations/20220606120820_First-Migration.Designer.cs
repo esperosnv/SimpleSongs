@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SimpleSongs.Data.Context;
 
@@ -11,9 +12,10 @@ using SimpleSongs.Data.Context;
 namespace SimpleSongs.Data.Migrations
 {
     [DbContext(typeof(SongsContext))]
-    partial class SongsContextModelSnapshot : ModelSnapshot
+    [Migration("20220606120820_First-Migration")]
+    partial class FirstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

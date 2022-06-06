@@ -16,5 +16,10 @@ namespace SimpleSongs.Data.Context
             optionsBuilder.UseSqlServer(
                 @"Server=(localdb)\mssqllocaldb;Database=SimpleSongs;Integrated Security=True");
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.SeedDatabase();
+        }
     }
 }
