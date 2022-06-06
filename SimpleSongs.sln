@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSongs", "SimpleSongs\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSongs.Data", "SimpleSongs.Data\SimpleSongs.Data.csproj", "{B7C26B14-C44F-4FF5-B6CA-8846CC135658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSongsTests", "SimpleSongsTests\SimpleSongsTests.csproj", "{8DBC4C77-2EC7-411E-8C90-0145EBB88BED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSong.UnitTests", "SimpleSong.UnitTests\SimpleSong.UnitTests.csproj", "{A562D4FF-633D-49BC-B891-B2D4A03D9D1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{B7C26B14-C44F-4FF5-B6CA-8846CC135658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7C26B14-C44F-4FF5-B6CA-8846CC135658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7C26B14-C44F-4FF5-B6CA-8846CC135658}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DBC4C77-2EC7-411E-8C90-0145EBB88BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DBC4C77-2EC7-411E-8C90-0145EBB88BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DBC4C77-2EC7-411E-8C90-0145EBB88BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DBC4C77-2EC7-411E-8C90-0145EBB88BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A562D4FF-633D-49BC-B891-B2D4A03D9D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A562D4FF-633D-49BC-B891-B2D4A03D9D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A562D4FF-633D-49BC-B891-B2D4A03D9D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A562D4FF-633D-49BC-B891-B2D4A03D9D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
