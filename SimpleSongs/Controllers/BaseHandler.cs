@@ -27,7 +27,7 @@ namespace SimpleSongs.Controllers
         public void Run()
         {
             string userInput = null;
-           // _display.ClearScreen();
+            _display.ClearScreen();
 
             while (userInput != "quit")
             {
@@ -36,7 +36,7 @@ namespace SimpleSongs.Controllers
 
                 RunFeatureBasedOn(userInput);
                 _inputSystem.FetchStringValue("Press enter to proceed...");
-               // _display.ClearScreen();
+                _display.ClearScreen();
             }
         }
 

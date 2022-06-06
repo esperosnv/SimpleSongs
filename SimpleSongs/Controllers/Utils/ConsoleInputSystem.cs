@@ -7,8 +7,16 @@ namespace SimpleSongs.Controllers.Utils
     {
         public string FetchStringValue(string prompt)
         {
-            Console.WriteLine(prompt);
-            return Console.ReadLine();
+            bool isResultIncorrect = true;
+            string answer = "";
+            while (isResultIncorrect)
+            {
+                Console.WriteLine(prompt);
+                answer = Console.ReadLine();
+                if (answer.Length > 0) isResultIncorrect = false;
+                else Console.WriteLine("Invalid input");
+            }
+            return answer;
         }
 
         public double FetchDoubleValue(string prompt)
@@ -20,7 +28,7 @@ namespace SimpleSongs.Controllers.Utils
             while (isResultString)
             {
                 if (double.TryParse(Console.ReadLine().Trim(), out valueResult) && valueResult > 0) isResultString = false;
-                else Console.WriteLine("Invalid input");
+                else Console.WriteLine("Invalid input. Only numbers");
             }
             return valueResult;
         }
