@@ -12,16 +12,10 @@ namespace SimpleSongs.Controllers
         public UserHandler(SongHandler songHandler, IInputSystem inputSystem, IView<User> view, IMenuDisplay display) : base(inputSystem, view, display)
         {
             _songHandler = songHandler;
-            _availableCommands = new string[] { "1. Show all songs ", "2."};
+            _availableCommands = new string[] { "1. Show all songs ", "2. Add new song", "3. Delete song", "4. Update song"};
 
         }
 
-        public void GetSongs()
-        {
-            List<Song> songsList = _songHandler.GetAllSongs();
-            _songHandler.ShowSongsList(songsList);
-
-        }
 
         public override void RunFeatureBasedOn(string userInput)
         {
@@ -31,11 +25,43 @@ namespace SimpleSongs.Controllers
                 case "1":
                     GetSongs();
                     break;
+                case "2":
+                    AddNewSong();
+                    break;
+                case "3":
+                    DeleteSong();
+                    break;
+                case "4":
+                    UpdateSong();
+                    break;
                 default:
                     Console.WriteLine("User");
                     break;
             }
-            //GetSongs();
+        }
+
+        public void GetSongs()
+        {
+            List<Song> songsList = _songHandler.GetAllSongs();
+            _songHandler.ShowSongsList(songsList);
+
+        }
+
+        public void AddNewSong()
+        {
+            Song newSong = _songHandler.CreateSong();
+            _songHandler.ShowOneSong(newSong);
+        }
+        public void DeleteSong()
+        {
+            Song deletedSong = _songHandler.DeleteSong();
+            Console.WriteLine("This song was deleted:");
+            _songHandler.ShowOneSong(deletedSong);
+        }
+        public void UpdateSong()
+        {
+            Song updatedSong = _songHandler.UpdateSong();
+            _songHandler.ShowOneSong(updatedSong);
         }
     }
 }

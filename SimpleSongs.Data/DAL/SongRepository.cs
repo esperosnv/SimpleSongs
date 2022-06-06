@@ -36,7 +36,7 @@ namespace SimpleSongs.Data.DAL
 
         public Song GetSingle(Func<Song, bool> condition)
         {
-            return _songsContext.Songs.First();
+            return _songsContext.Songs.Where(condition).FirstOrDefault();
         }
 
         public void Save()
