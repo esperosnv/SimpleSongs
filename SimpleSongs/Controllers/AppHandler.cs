@@ -2,6 +2,7 @@
 using SimpleSongs.Views.Interfaces;
 using SimpleSongs.Controllers.Interfaces;
 using SimpleSongs.Controllers.Utils;
+using SimpleSongs.Data.DAL;
 
 
 
@@ -18,10 +19,15 @@ namespace SimpleSongs.Controllers
         {
             _inputSystem = new ConsoleInputSystem();
             _display = new MenuDisplay();
-            _userHandler = new UserHandler(_inputSystem, _display);
+            _userHandler = new UserHandler(GetNewSongHandler(), _inputSystem, new UserConsoleView(), _display);
         }
 
-     
+        public SongHandler GetNewSongHandler()
+        {
+            return new SongHandler(new SongRepository(), _inputSystem, new SongConsoleView(), new MenuDisplay());
+        }
+
+
 
         public void Run()
         {

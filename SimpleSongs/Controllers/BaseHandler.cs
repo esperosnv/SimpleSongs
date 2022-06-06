@@ -11,12 +11,14 @@ namespace SimpleSongs.Controllers
     {
         protected IInputSystem _inputSystem;
         protected IMenuDisplay _display;
+        protected IView<T> _view;
         protected string[] _availableCommands;
 
 
 
-        protected BaseHandler(IInputSystem inputSystem, IMenuDisplay display)
+        protected BaseHandler(IInputSystem inputSystem, IView<T> view, IMenuDisplay display)
         {
+            _view = view;
             _inputSystem = inputSystem;
             _display = display;
         }
@@ -25,7 +27,7 @@ namespace SimpleSongs.Controllers
         public void Run()
         {
             string userInput = null;
-            _display.ClearScreen();
+           // _display.ClearScreen();
 
             while (userInput != "quit")
             {
@@ -34,7 +36,7 @@ namespace SimpleSongs.Controllers
 
                 RunFeatureBasedOn(userInput);
                 _inputSystem.FetchStringValue("Press enter to proceed...");
-                _display.ClearScreen();
+               // _display.ClearScreen();
             }
         }
 
