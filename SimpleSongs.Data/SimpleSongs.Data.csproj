@@ -7,9 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-
-	<ItemGroup>
-		<ProjectReference Include="..\SimpleSongs.Data\SimpleSongs.Data.csproj" />
-	</ItemGroup>
-
 </Project>
