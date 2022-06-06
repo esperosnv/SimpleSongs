@@ -33,10 +33,11 @@ namespace SimpleSongs.Data.DAL
         {
             return _songsContext.Songs.ToList();
         }
+ 
 
         public Song GetSingle(Func<Song, bool> condition)
         {
-            return _songsContext.Songs.Where(condition).FirstOrDefault();
+            return _songsContext.Songs.Where(condition).First();
         }
 
         public void Save()

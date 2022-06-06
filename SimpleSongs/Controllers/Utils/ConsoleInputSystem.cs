@@ -24,19 +24,5 @@ namespace SimpleSongs.Controllers.Utils
             }
             return valueResult;
         }
-
-        //public int FetchIntValue(string prompt)
-        //{
-        //    int valueResult = 0;
-        //    bool isResultString = true;
-
-        //    while (isResultString)
-        //    {
-        //        Console.WriteLine(prompt);
-        //        if (int.TryParse(Console.ReadLine().Trim(), out valueResult) && valueResult > 0) isResultString = false;
-        //        else Console.WriteLine("Invalid input");
-        //    }
-        //    return valueResult;
-        //}
     }
 }

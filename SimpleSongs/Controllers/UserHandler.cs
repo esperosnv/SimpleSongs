@@ -12,7 +12,7 @@ namespace SimpleSongs.Controllers
         public UserHandler(SongHandler songHandler, IInputSystem inputSystem, IView<User> view, IMenuDisplay display) : base(inputSystem, view, display)
         {
             _songHandler = songHandler;
-            _availableCommands = new string[] { "1. Show all songs ", "2. Add new song", "3. Delete song", "4. Update song"};
+            _availableCommands = new string[] { "1. Show all songs ", "2. Add new song", "3. Delete song", "4. Update song", "5. Sort song"};
 
         }
 
@@ -33,6 +33,9 @@ namespace SimpleSongs.Controllers
                     break;
                 case "4":
                     UpdateSong();
+                    break;
+                case "5":
+                    SortSongs();
                     break;
                 default:
                     Console.WriteLine("User");
@@ -62,6 +65,11 @@ namespace SimpleSongs.Controllers
         {
             Song updatedSong = _songHandler.UpdateSong();
             _songHandler.ShowOneSong(updatedSong);
+        }
+        public void SortSongs()
+        {
+            List<Song> sortedSongs = _songHandler.SortSongs();
+            _songHandler.ShowSongsList(sortedSongs);
         }
     }
 }

@@ -52,13 +52,12 @@ namespace SimpleSongs.Controllers
             {
                 try
                 {
-                    string songName = _inputSystem.FetchStringValue($"Enter the name of class you want to {action}").Trim();
+                    string songName = _inputSystem.FetchStringValue($"Enter the name of the song you want to {action}").Trim();
                     selectSong = _songRepository.GetSingle(song => song.Title == songName);
                     break;
                 }
                 catch (Exception ex) { _display.PrintMessage(ex.Message); }
             } while (true);
-            Console.WriteLine(selectSong.Title);
             return selectSong;
         }
 
@@ -91,29 +90,11 @@ namespace SimpleSongs.Controllers
             return selectedSong;
         }
 
-
-        //public void CRUD_SongData(string partNumber)
-        //{
-        //    switch (partNumber)
-        //    {
-        //        case "1":
-        //            selectedSong.Title = _inputSystem.FetchStringValue("Enter new title for song:").Trim();
-        //            break;
-        //        case "2":
-        //            selectedSong.Author = _inputSystem.FetchStringValue("Enter new author for song:").Trim();
-        //            break;
-        //        case "3":
-        //            selectedSong.AlbumName = _inputSystem.FetchStringValue("Enter new album name for song:").Trim();
-        //            break;
-        //        case "4":
-        //            selectedSong.Length = _inputSystem.FetchDoubleValue("Enter new length for song:");
-        //            break;
-        //        default:
-        //            _display.PrintMessage("Wrong option");
-        //            break;
-        //    }
-        //}
-
+        public List<Song> SortSongs()
+        {
+            List<Song> songsList = GetAllSongs();
+            return songsList.OrderBy(x => x.Title).ToList();
+        }
 
 
 
